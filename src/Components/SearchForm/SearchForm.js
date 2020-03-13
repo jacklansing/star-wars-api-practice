@@ -65,7 +65,6 @@ class SearchForm extends Component {
     e.preventDefault();
     let search = this.state.search.value;
     let category = this.state.category.value;
-    console.log('Searchparams', search, category);
     const params = `${category}/?search=${search}`;
     this.props.onSearch(params);
   }
