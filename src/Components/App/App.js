@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import SearchResults from '../SearchResults/SearchResults';
 import './App.css';
+import stormTrooper from '../../images/stormtrooper.svg';
 
 class App extends Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class App extends Component {
       <div>
         <header className="Header">
           <h1>Star Wars Search</h1>
-          <img src={'../../public/stormtrooper.svg'} alt="storm trooper" />
+          <img src={stormTrooper} alt="storm trooper" />
         </header>
         <main className="Main">
           <SearchForm onSearch={this.getResults} />
