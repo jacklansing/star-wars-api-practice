@@ -111,7 +111,9 @@ class SearchForm extends Component {
             </p>
           )}
         </label>
-        <button type="submit">Search</button>
+        <button disabled={this.validateSearch()} type="submit">
+          Search
+        </button>
       </form>
     );
   }
