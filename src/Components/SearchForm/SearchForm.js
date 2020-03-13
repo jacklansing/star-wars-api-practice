@@ -16,6 +16,7 @@ class SearchForm extends Component {
         <label htmlFor="search">
           <input type="text" id="search" name="search" />
         </label>
+        <button type="submit">Search</button>
       </form>
     );
   }
