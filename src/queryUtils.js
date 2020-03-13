@@ -1,7 +1,9 @@
 const getRoot = () => {
-  fetch('https://swapi.co/api/')
+  return fetch('https://swapi.co/api/')
     .then(res => res.json())
-    .then(data => console.log(data));
+    .then(data => {
+      return data;
+    });
 };
 
 export default {
