@@ -18,6 +18,7 @@ form.Search {
 .Search input {
   margin-top: 4px;
   display: block;
+  max-width: 80%;
 }
 
 .Search select {
