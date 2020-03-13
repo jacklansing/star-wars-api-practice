@@ -28,6 +28,12 @@
 
 @media screen and (min-width: 600px) {
   .Results__list {
+    grid-template-columns: repeat(2, 300px);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .Results__list {
     grid-template-columns: repeat(3, 300px);
   }
 }
