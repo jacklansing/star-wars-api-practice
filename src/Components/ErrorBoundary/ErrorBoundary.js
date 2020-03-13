@@ -14,12 +14,6 @@ class ErrorBoundary extends Component {
     return { error: true };
   }
 
-  componentDidUpdate() {
-    if (this.state.hasError) {
-      setTimeout(() => window.location.reload(true), 5000);
-    }
-  }
-
   render() {
     if (this.state.error) {
       return (

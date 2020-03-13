@@ -72,7 +72,7 @@ class SearchForm extends Component {
 
   validateSearch() {
     if (this.state.search.value.length === 0) {
-      return 'Please enter some type of search ;)';
+      return 'Search is required';
     }
   }
 
