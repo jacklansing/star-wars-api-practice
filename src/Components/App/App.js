@@ -45,23 +45,23 @@ class App extends Component {
     console.log(this.state.results);
     return (
       <div>
-        <header className="Header">
-          <h1>Star Wars Search</h1>
-          <img src={stormTrooper} alt="storm trooper" />
-        </header>
-        <main className="Main">
-          <Switch>
-            <Route exact path="/">
+        <Switch>
+          <Route exact path="/">
+            <header className="Header">
+              <h1>Star Wars Search</h1>
+              <img src={stormTrooper} alt="storm trooper" />
+            </header>
+            <main className="Main">
               <SearchForm onSearch={this.getResults} />
               {this.state.searchError ? (
                 <p>Oops! Something went wrong. Please try searching again</p>
               ) : (
                 <SearchResults results={this.state.results} />
               )}
-            </Route>
-            <Route path="/" component={PageNotFound} />
-          </Switch>
-        </main>
+            </main>
+          </Route>
+          <Route path="/" render={() => <PageNotFound />} />
+        </Switch>
       </div>
     );
   }

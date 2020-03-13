@@ -1,0 +1,13 @@
+div.PageNotFound h2 {
+  text-align: center;
+}
+
+.PageNotFound p {
+  font-size: 1.2em;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.PageNotFound a {
+  color: white;
+}
