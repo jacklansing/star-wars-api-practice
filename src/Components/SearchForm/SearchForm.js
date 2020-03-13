@@ -106,7 +106,9 @@ class SearchForm extends Component {
             ))}
           </select>
           {this.state.error && (
-            <p>There was an generating categories, please try again later</p>
+            <p>
+              There was an error generating categories, please try again later
+            </p>
           )}
         </label>
         <button type="submit">Search</button>

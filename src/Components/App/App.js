@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import SearchResults from '../SearchResults/SearchResults';
+import PageNotFound from '../PageNotFound/PageNotFound';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import stormTrooper from '../../images/stormtrooper.svg';
 
@@ -48,12 +50,17 @@ class App extends Component {
           <img src={stormTrooper} alt="storm trooper" />
         </header>
         <main className="Main">
-          <SearchForm onSearch={this.getResults} />
-          {this.state.searchError ? (
-            <p>Oops! Something went wrong. Please try searching again</p>
-          ) : (
-            <SearchResults results={this.state.results} />
-          )}
+          <Switch>
+            <Route exact path="/">
+              <SearchForm onSearch={this.getResults} />
+              {this.state.searchError ? (
+                <p>Oops! Something went wrong. Please try searching again</p>
+              ) : (
+                <SearchResults results={this.state.results} />
+              )}
+            </Route>
+            <Route path="/" component={PageNotFound} />
+          </Switch>
         </main>
       </div>
     );
