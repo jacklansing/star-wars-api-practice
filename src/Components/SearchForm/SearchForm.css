@@ -1,0 +1,32 @@
+form.Search {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+}
+
+.Search label {
+  font-size: 1.5em;
+}
+
+.Search input,
+.Search select {
+  font-size: 1em;
+}
+
+.Search input {
+  margin-top: 4px;
+  display: block;
+}
+
+.Search select {
+  display: block;
+  margin-top: 4px;
+  width: 45%;
+}
+
+.Search button {
+  display: block;
+  font-size: 2em;
+  margin-top: 16px;
+  width: 200px;
+}

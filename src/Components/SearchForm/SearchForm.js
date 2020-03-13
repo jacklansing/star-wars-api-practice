@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FormValidationError from '../FormValidationError/FormValidationError';
 import cuid from 'cuid';
+import './SearchForm.css';
 
 class SearchForm extends Component {
   constructor(props) {
@@ -78,7 +79,7 @@ class SearchForm extends Component {
   render() {
     const { categoriesList } = this.state;
     return (
-      <form onSubmit={e => this.handleSubmit(e)}>
+      <form className="Search" onSubmit={e => this.handleSubmit(e)}>
         <label htmlFor="search">
           Search:
           <input
@@ -100,7 +101,7 @@ class SearchForm extends Component {
           >
             {categoriesList.map(category => (
               <option value={category} key={cuid()}>
-                {category}
+                {category[0].toUpperCase() + category.slice(1)}
               </option>
             ))}
           </select>
