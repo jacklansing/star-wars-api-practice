@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FormValidationError from '../FormValidationError/FormValidationError';
+import PropTypes from 'prop-types';
 import cuid from 'cuid';
 import './SearchForm.css';
 
@@ -118,4 +119,9 @@ class SearchForm extends Component {
     );
   }
 }
+
+SearchForm.propTypes = {
+  onSearch: PropTypes.func
+};
+
 export default SearchForm;

@@ -33,7 +33,8 @@ class SearchResults extends Component {
 
 SearchResults.propTypes = {
   results: PropTypes.arrayOf(PropTypes.object),
-  loading: PropTypes.bool
+  loading: PropTypes.bool,
+  searchAttempted: PropTypes.bool
 };
 
 export default SearchResults;
