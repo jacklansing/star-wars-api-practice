@@ -13,7 +13,8 @@ class App extends Component {
     this.state = {
       results: [],
       searchError: false,
-      loading: false
+      loading: false,
+      searchAttempted: false
     };
   }
 
@@ -36,7 +37,7 @@ class App extends Component {
       })
       .then(data => {
         this.setState({ searchError: false });
-        this.setState({ loading: false });
+        this.setState({ loading: false, searchAttempted: true });
         const { results } = data;
         this.setResults(results);
       })
@@ -64,6 +65,7 @@ class App extends Component {
                 <SearchResults
                   loading={this.state.loading}
                   results={this.state.results}
+                  searchAttempted={this.state.searchAttempted}
                 />
               )}
             </main>

@@ -1,23 +1,15 @@
 import React, { Component } from 'react';
 import cuid from 'cuid';
+import PropTypes from 'prop-types';
+
 import './SearchResults.css';
 class SearchResults extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      touched: false
-    };
-  }
-
-  componentWillReceiveProps() {
-    this.setState({
-      touched: true
-    });
-  }
-
   static defaultProps = {
-    results: []
+    results: [],
+    loading: false,
+    searchAttempted: false
   };
+
   render() {
     const { results } = this.props;
     return (
@@ -27,7 +19,7 @@ class SearchResults extends Component {
             <li key={cuid()}>{result.name || result.title}</li>
           ))}
         </ul>
-        {this.state.touched &&
+        {this.props.searchAttempted &&
           this.props.results.length === 0 &&
           !this.props.loading && (
             <p className="Results__noresult">
@@ -38,4 +30,10 @@ class SearchResults extends Component {
     );
   }
 }
+
+SearchResults.propTypes = {
+  results: PropTypes.arrayOf(PropTypes.object),
+  loading: PropTypes.bool
+};
+
 export default SearchResults;
