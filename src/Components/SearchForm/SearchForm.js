@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FormValidationError from '../FormValidationError/FormValidationError';
+import cuid from 'cuid';
 
 class SearchForm extends Component {
   constructor(props) {
@@ -8,6 +9,9 @@ class SearchForm extends Component {
       search: {
         value: '',
         touched: false
+      },
+      category: {
+        value: 'people'
       },
       categoriesList: [],
       catError: null
@@ -49,9 +53,21 @@ class SearchForm extends Component {
     });
   }
 
+  updateCategory(category) {
+    this.setState({
+      category: {
+        value: category
+      }
+    });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    this.props.onSearch();
+    let search = this.state.search.value;
+    let category = this.state.category.value;
+    console.log('Searchparams', search, category);
+    const params = `${category}/?search=${search}`;
+    this.props.onSearch(params);
   }
 
   validateSearch() {
@@ -78,9 +94,14 @@ class SearchForm extends Component {
         )}
         <label htmlFor="options">
           Category:
-          <select htmlFor="category">
-            {categoriesList.map((category, index) => (
-              <option key={index}>{category}</option>
+          <select
+            htmlFor="category"
+            onChange={e => this.updateCategory(e.target.value)}
+          >
+            {categoriesList.map(category => (
+              <option value={category} key={cuid()}>
+                {category}
+              </option>
             ))}
           </select>
           {this.state.error && (

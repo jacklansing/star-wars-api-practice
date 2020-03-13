@@ -16,7 +16,7 @@ class App extends Component {
   };
 
   getResults = params => {
-    fetch('https://swapi.co/api/people/?search=luke')
+    fetch(`https://swapi.co/api/${params}`)
       .then(res => res.json())
       .then(data => {
         const { results } = data;
