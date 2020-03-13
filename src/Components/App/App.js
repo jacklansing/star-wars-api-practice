@@ -52,7 +52,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/">
             <header className="Header">
-              <h1>Star Wars Search</h1>
+              <h1>Star Wars DB</h1>
               <img src={stormTrooper} alt="storm trooper" />
             </header>
             <main className="Main">

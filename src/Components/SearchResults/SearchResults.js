@@ -30,7 +30,9 @@ class SearchResults extends Component {
         {this.state.touched &&
           this.props.results.length === 0 &&
           !this.props.loading && (
-            <p>Apologies, we could find no results for that search.</p>
+            <p className="Results__noresult">
+              Apologies, we could find no results for that search.
+            </p>
           )}
       </div>
     );

@@ -26,6 +26,11 @@
   font-size: 1.3em;
 }
 
+.Results__noresult {
+  margin-left: 24px;
+  font-size: 1.3em;
+}
+
 @media screen and (min-width: 600px) {
   .Results__list {
     grid-template-columns: repeat(2, 300px);
