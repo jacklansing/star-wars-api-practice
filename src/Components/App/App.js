@@ -44,6 +44,7 @@ class App extends Component {
       <div>
         <header className="Header">
           <h1>Star Wars Search</h1>
+          <img src={'../../public/stormtrooper.svg'} alt="storm trooper" />
         </header>
         <main className="Main">
           <SearchForm onSearch={this.getResults} />

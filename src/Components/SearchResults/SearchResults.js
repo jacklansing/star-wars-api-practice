@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import cuid from 'cuid';
-
+import './SearchResults.css';
 class SearchResults extends Component {
   constructor(props) {
     super(props);
@@ -21,8 +21,8 @@ class SearchResults extends Component {
   render() {
     const { results } = this.props;
     return (
-      <div className="Search">
-        <ul className="Search__results">
+      <div className="Results">
+        <ul className="Results__list">
           {results.map(result => (
             <li key={cuid()}>{result.name || result.title}</li>
           ))}
