@@ -94,6 +94,7 @@ class SearchForm extends Component {
         <label htmlFor="options">
           Category:
           <select
+            value={this.state.category.value}
             htmlFor="category"
             onChange={e => this.updateCategory(e.target.value)}
           >

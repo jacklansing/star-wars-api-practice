@@ -24,7 +24,7 @@ class SearchResults extends Component {
       <div className="Search">
         <ul className="Search__results">
           {results.map(result => (
-            <li key={cuid()}>{result.name}</li>
+            <li key={cuid()}>{result.name || result.title}</li>
           ))}
         </ul>
         {this.state.touched && this.props.results.length === 0 && (
