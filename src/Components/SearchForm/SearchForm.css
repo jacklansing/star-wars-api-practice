@@ -11,6 +11,8 @@ form.Search {
 .Search input,
 .Search select {
   font-size: 1em;
+  padding: 8px;
+  border-radius: 5px;
 }
 
 .Search input {
@@ -26,7 +28,10 @@ form.Search {
 
 .Search button {
   display: block;
-  font-size: 2em;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
   margin-top: 16px;
   width: 200px;
+  border-radius: 5px;
 }
