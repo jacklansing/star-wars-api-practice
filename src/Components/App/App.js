@@ -25,7 +25,7 @@ class App extends Component {
   };
 
   getResults = params => {
-    this.setState({ loading: true });
+    this.setState({ loading: true, results: [] });
     fetch(`https://swapi.co/api/${params}`)
       .then(res => {
         if (!res.ok) {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import cuid from 'cuid';
 import PropTypes from 'prop-types';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import './SearchResults.css';
 class SearchResults extends Component {
@@ -15,9 +16,22 @@ class SearchResults extends Component {
     return (
       <div className="Results">
         <ul className="Results__list">
-          {results.map(result => (
-            <li key={cuid()}>{result.name || result.title}</li>
-          ))}
+          <TransitionGroup component={null}>
+            {results.map(result => {
+              const id = cuid();
+              return (
+                <CSSTransition
+                  in={!this.props.loading}
+                  key={id}
+                  timeout={200}
+                  classNames="pop"
+                  unmountOnExit
+                >
+                  <li key={id}>{result.name || result.title}</li>
+                </CSSTransition>
+              );
+            })}
+          </TransitionGroup>
         </ul>
         {this.props.searchAttempted &&
           this.props.results.length === 0 &&
